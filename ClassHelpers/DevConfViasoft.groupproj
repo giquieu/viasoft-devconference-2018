@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{587D04CD-9BBD-4224-B665-00F9F8FA2C6E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Paralelismo\TTask.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ClassHelpers.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Project CustomAtributes\CustomAttributes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\luiz.clazzer\Documents\Embarcadero\Studio\Projects\Stricts.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TTask">
+        <MSBuild Projects="..\Paralelismo\TTask.dproj"/>
+    </Target>
+    <Target Name="TTask:Clean">
+        <MSBuild Projects="..\Paralelismo\TTask.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TTask:Make">
+        <MSBuild Projects="..\Paralelismo\TTask.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ClassHelpers">
+        <MSBuild Projects="ClassHelpers.dproj"/>
+    </Target>
+    <Target Name="ClassHelpers:Clean">
+        <MSBuild Projects="ClassHelpers.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ClassHelpers:Make">
+        <MSBuild Projects="ClassHelpers.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomAttributes">
+        <MSBuild Projects="..\Project CustomAtributes\CustomAttributes.dproj"/>
+    </Target>
+    <Target Name="CustomAttributes:Clean">
+        <MSBuild Projects="..\Project CustomAtributes\CustomAttributes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomAttributes:Make">
+        <MSBuild Projects="..\Project CustomAtributes\CustomAttributes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Stricts">
+        <MSBuild Projects="C:\Users\luiz.clazzer\Documents\Embarcadero\Studio\Projects\Stricts.dproj"/>
+    </Target>
+    <Target Name="Stricts:Clean">
+        <MSBuild Projects="C:\Users\luiz.clazzer\Documents\Embarcadero\Studio\Projects\Stricts.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Stricts:Make">
+        <MSBuild Projects="C:\Users\luiz.clazzer\Documents\Embarcadero\Studio\Projects\Stricts.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TTask;ClassHelpers;CustomAttributes;Stricts"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TTask:Clean;ClassHelpers:Clean;CustomAttributes:Clean;Stricts:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TTask:Make;ClassHelpers:Make;CustomAttributes:Make;Stricts:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

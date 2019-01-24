@@ -1,0 +1,56 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Future'
+  ClientHeight = 299
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MemoLog: TMemo
+    AlignWithMargins = True
+    Left = 3
+    Top = 44
+    Width = 629
+    Height = 252
+    Align = alClient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    ExplicitLeft = 112
+    ExplicitTop = 104
+    ExplicitWidth = 491
+    ExplicitHeight = 299
+  end
+  object PanelHeader: TPanel
+    Left = 0
+    Top = 0
+    Width = 635
+    Height = 41
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 1
+    ExplicitLeft = 280
+    ExplicitTop = 40
+    ExplicitWidth = 185
+    object ButtonAsync: TButton
+      Left = 15
+      Top = 6
+      Width = 113
+      Height = 25
+      Caption = 'Future'
+      TabOrder = 0
+      OnClick = ButtonAsyncClick
+    end
+  end
+end
